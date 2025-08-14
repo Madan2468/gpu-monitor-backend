@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["es2020"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "./dist",
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": [
+    "src",
+    "src/types"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
