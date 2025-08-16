@@ -64,7 +64,8 @@ function App() {
     file: null as File | null
   });
 
-  const API_BASE = 'http://localhost:5001/api';
+  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+  const SOCKET_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:5001';
 
   const loadJobs = async () => {
     try {
@@ -90,7 +91,7 @@ function App() {
 
   useEffect(() => {
     // Initialize socket connection
-    const socket = io('http://localhost:5001');
+    const socket = io(SOCKET_URL);
     
     // Listen for job updates
     socket.on('job-update', (update) => {
